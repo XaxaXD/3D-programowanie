@@ -3,7 +3,7 @@
 
 /*
 DRY - don't repeat yourself - nie powtarzaj się
-KISS - kept in simple, stupid - trzymaj prostotę, głupcze
+KISS - keept in simple, stupid - trzymaj prostotę, głupcze
 YAGNI - you aren't gonna need it - nie potrzebujesz tego
 SOLID
 	S - single responsibility - pojedyńcza odpowiedzialność
