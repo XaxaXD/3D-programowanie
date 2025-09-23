@@ -20,3 +20,6 @@ a = firstPoint.GetX();
 //a = firstPoint.x;
 a = firstPoint.X;
 firstPoint.Show();
+
+Point3D point4 = new Point3D();
+point4.Show();

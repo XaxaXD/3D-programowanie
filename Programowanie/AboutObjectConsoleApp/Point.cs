@@ -1,8 +1,8 @@
 ﻿namespace AboutObjectConsoleApp;
 
-internal class Point
+internal class Point /*: Object*/
 {
-    private int x;
+    protected int x;
     public int X
     {
         set
