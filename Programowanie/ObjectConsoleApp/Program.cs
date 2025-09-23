@@ -56,5 +56,28 @@ void ParatertTestClass_v1(PointClass pc)
     Console.WriteLine($"W ParatertTestClass_v1 punkt ma ({pc.x}, {pc.y}) ");
 }
 
+void ParatertTestClass_v2(PointClass pc)
+{
+    Console.WriteLine($"W ParatertTestClass_v2 punkt ma ({pc.x}, {pc.y}) ");
+    pc = new PointClass();
+    pc.x = 150;
+    Console.WriteLine($"W ParatertTestClass_v2 punkt ma ({pc.x}, {pc.y}) ");
+}
+
+void ParatertTestClass_v3(ref PointClass pc)
+{
+    Console.WriteLine($"W ParatertTestClass_v3 punkt ma ({pc.x}, {pc.y}) ");
+    pc = new PointClass();
+    pc.x = 42;
+    Console.WriteLine($"W ParatertTestClass_v3 punkt ma ({pc.x}, {pc.y}) ");
+}
+
+
 ParatertTestClass_v1(firstPointClass);
+Console.WriteLine($"firstPointClass ({firstPointClass.x}, {firstPointClass.y}) ");
+
+ParatertTestClass_v2(firstPointClass);
+Console.WriteLine($"firstPointClass ({firstPointClass.x}, {firstPointClass.y}) ");
+
+ParatertTestClass_v3(ref firstPointClass);
 Console.WriteLine($"firstPointClass ({firstPointClass.x}, {firstPointClass.y}) ");
