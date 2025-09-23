@@ -1,5 +1,6 @@
 # klasa-3D-2025-2026-programowanie
 
+Kartkówka z pierwszej godziny będzie na zajęciach w dniu 23.09.2025
 
 Kartkówka
 
