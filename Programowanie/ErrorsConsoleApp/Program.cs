@@ -60,7 +60,8 @@ void ErrorsV2()
 
 int? Operation(int a, int b)
 {
-    if (b != 0)
+    if (b != 0
+        && a >= 0)
     {
         int result;
         result = a / b + (int)Math.Sqrt(a);
@@ -89,6 +90,78 @@ void ErrorsV3()
     if (result != null)
         Console.WriteLine("Wynik operacji: " + result);
     else
-        Console.WriteLine("Nie można dzielić przez zero");
+        Console.WriteLine("Nie można dzielić przez zero lub pierwiastek ujemny");
 }
 
+int Operation4(int a, int b, out int result)
+{
+    result = 0;
+    if (b == 0)
+        return 1;
+    else if (a < 0)
+        return 2;
+    else
+    {
+        result = a / b + (int)Math.Sqrt(a);
+        return 0;
+    }
+}
+
+void ErrorsV4()
+{
+    string strFirstNumber, strSecondNumber;
+    int firstNumber, secondNumber;
+    int result;
+
+    bool repeatAgain;
+    do
+    {
+        repeatAgain = false;
+        Console.WriteLine("Podaj pierwszą liczbę");
+        strFirstNumber = Console.ReadLine();
+
+        Console.WriteLine("Podaj drugą liczbę");
+        strSecondNumber = Console.ReadLine();
+
+        firstNumber = int.Parse(strFirstNumber);
+        secondNumber = int.Parse(strSecondNumber);
+
+        int errorResult = Operation4(firstNumber, secondNumber, out result);
+        if (errorResult == 0)
+            Console.WriteLine("Wynik operacji: " + result);
+        else if (errorResult == 1)
+        {
+            Console.WriteLine("Nie można dzielić przez zero");
+            repeatAgain = true;
+        }
+        else if (errorResult == 2)
+            Console.WriteLine("Pierwiastek ujemny");
+    } while (repeatAgain);
+}
+
+void ErrorsV5()
+{
+    string strFirstNumber, strSecondNumber;
+    int firstNumber, secondNumber, result;
+
+    Console.WriteLine("Podaj pierwszą liczbę");
+    strFirstNumber = Console.ReadLine();
+
+    Console.WriteLine("Podaj drugą liczbę");
+    strSecondNumber = Console.ReadLine();
+
+    firstNumber = int.Parse(strFirstNumber);
+    secondNumber = int.Parse(strSecondNumber);
+
+    try
+    {
+        result = firstNumber / secondNumber;
+        Console.WriteLine("Wynik dzielenia: " + result);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Wystąpił błąd: " + ex.Message);
+    }
+}
+
+ErrorsV5();
