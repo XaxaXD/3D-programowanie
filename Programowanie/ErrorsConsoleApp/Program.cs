@@ -164,4 +164,114 @@ void ErrorsV5()
     }
 }
 
-ErrorsV5();
+int Div6(int a, int b)
+{
+    int result;
+    result = a / b;
+    return result;
+}
+
+void ErrorsV6()
+{
+    string strFirstNumber, strSecondNumber;
+    int firstNumber, secondNumber, result;
+
+    Console.WriteLine("Podaj pierwszą liczbę");
+    strFirstNumber = Console.ReadLine();
+
+    Console.WriteLine("Podaj drugą liczbę");
+    strSecondNumber = Console.ReadLine();
+
+    firstNumber = int.Parse(strFirstNumber);
+    secondNumber = int.Parse(strSecondNumber);
+
+    try
+    {
+        result = Div6(firstNumber, secondNumber);
+        Console.WriteLine("Wynik dzielenia: " + result);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Wystąpił błąd: " + ex.Message);
+    }
+
+}
+
+int Operation7(int a, int b)
+{
+    if (a < 0)
+        throw new Exception("Pierwiastek ujemny");
+
+    int result;
+    result = a / b + (int)Math.Sqrt(a);
+    return result;
+}
+
+void ErrorsV7()
+{
+    string strFirstNumber, strSecondNumber;
+    int firstNumber, secondNumber;
+    int? result = null;
+
+    Console.WriteLine("Podaj pierwszą liczbę");
+    strFirstNumber = Console.ReadLine();
+
+    Console.WriteLine("Podaj drugą liczbę");
+    strSecondNumber = Console.ReadLine();
+
+    firstNumber = int.Parse(strFirstNumber);
+    secondNumber = int.Parse(strSecondNumber);
+
+    try
+    {
+        result = Operation7(firstNumber, secondNumber);
+        Console.WriteLine("Wynik operacji: " + result);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Wystąpił błąd: " + ex.Message);
+    }
+}
+
+int Operation8(int a, int b)
+{
+    if (a < 0)
+        throw new Exception("Pierwiastek ujemny");
+
+    int result;
+    result = a / b + (int)Math.Sqrt(a);
+    return result;
+}
+
+void ErrorsV8()
+{
+    string strFirstNumber, strSecondNumber;
+    int firstNumber, secondNumber;
+    int? result = null;
+
+    Console.WriteLine("Podaj pierwszą liczbę");
+    strFirstNumber = Console.ReadLine();
+
+    Console.WriteLine("Podaj drugą liczbę");
+    strSecondNumber = Console.ReadLine();
+
+    firstNumber = int.Parse(strFirstNumber);
+    secondNumber = int.Parse(strSecondNumber);
+
+    try
+    {
+        result = Operation8(firstNumber, secondNumber);
+        Console.WriteLine("Wynik operacji: " + result);
+    }
+    catch (DivideByZeroException ex)
+    {
+        Console.WriteLine("Nie można dzielić przez zero: " + ex.Message);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Wystąpił błąd: " + ex.Message);
+    }
+    
+}
+
+ErrorsV8();
