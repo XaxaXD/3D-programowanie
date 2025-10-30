@@ -10,7 +10,7 @@ namespace Egzamin._2023_01_01
     {
         public void Task()
         {
-//yuuy3
+
         }
     }
 }
